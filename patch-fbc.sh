@@ -26,13 +26,14 @@ DESCRIPTION
        -d VERSION     Use VERSION driver version when looking for libraries
                       instead of using nvidia-smi to detect it.
        -f             Enable support for Flatpak NVIDIA drivers.
+       -j             Output the patch list to stdout as JSON
 '
 }
 
 # shellcheck disable=SC2209
 opmode="patch"
 
-while getopts 'rshc:ld:f' flag; do
+while getopts 'rshjc:ld:f' flag; do
     case "${flag}" in
         r) opmode="${opmode}rollback" ;;
         s) silent_flag='true' ;;
@@ -41,6 +42,7 @@ while getopts 'rshc:ld:f' flag; do
         l) opmode="${opmode}listversions" ;;
         d) manual_driver_version="$OPTARG" ;;
         f) flatpak_flag='true' ;;
+        j) opmode="dump" ;;
         *) echo "Incorrect option specified in command line" ; exit 2 ;;
     esac
 done
@@ -139,6 +141,7 @@ declare -A patch_list=(
     ["470.182.03"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["470.199.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["470.223.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
+    ["470.239.06"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["495.29.05"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["495.44"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["495.46"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
@@ -174,6 +177,7 @@ declare -A patch_list=(
     ["530.30.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["530.41.03"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["535.43.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
+    ["535.43.25"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["535.54.03"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["535.86.05"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
     ["535.86.10"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
@@ -184,11 +188,20 @@ declare -A patch_list=(
     ["535.129.03"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
     ["535.146.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
     ["535.154.05"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["535.161.07"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["535.161.08"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["535.171.04"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
     ["545.23.06"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
     ["545.23.08"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
     ["545.29.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
     ["545.29.06"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
     ["550.40.07"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["550.54.14"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["550.54.15"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["550.67"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["550.76"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["550.78"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
+    ["555.42.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x01\x90\x90\x48/'
 )
 
 check_version_supported () {
@@ -348,12 +361,22 @@ list_supported_versions () {
     get_supported_versions
 }
 
+dump_patches () {
+    for i in "${!patch_list[@]}"
+    do
+        echo "$i"
+        echo "${patch_list[$i]}"
+    done |
+    jq --sort-keys -n -R 'reduce inputs as $i ({}; . + { ($i): (input|(tonumber? // .)) })'
+}
+
 case "${opmode}" in
     patch) patch ;;
     patchrollback) rollback ;;
     patchhelp) print_usage ; exit 2 ;;
     patchcheckversion) query_version_support ;;
     patchlistversions) list_supported_versions ;;
+    dump) dump_patches ;;
     *) echo "Incorrect combination of flags. Use option -h to get help."
        exit 2 ;;
 esac
