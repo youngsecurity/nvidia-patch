@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-555.42.02-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-555.58-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -150,6 +150,7 @@ If you want to donate, please send it to your favorite open source organizations
 | 470.199.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.199.02/NVIDIA-Linux-x86_64-470.199.02.run) |
 | 470.223.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.223.02/NVIDIA-Linux-x86_64-470.223.02.run) |
 | 470.239.06 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.239.06/NVIDIA-Linux-x86_64-470.239.06.run) |
+| 470.256.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/470.256.02/NVIDIA-Linux-x86_64-470.256.02.run) |
 | 495.29.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.29.05/NVIDIA-Linux-x86_64-495.29.05.run) |
 | 495.44 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.44/NVIDIA-Linux-x86_64-495.44.run) |
 | 495.46 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.46/NVIDIA-Linux-x86_64-495.46.run) |
@@ -199,6 +200,7 @@ If you want to donate, please send it to your favorite open source organizations
 | 535.161.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.161.07/NVIDIA-Linux-x86_64-535.161.07.run) |
 | 535.161.08 | YES | YES |  |
 | 535.171.04 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.171.04/NVIDIA-Linux-x86_64-535.171.04.run) |
+| 535.183.01 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.183.01/NVIDIA-Linux-x86_64-535.183.01.run) |
 | 545.23.06 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.23.06/NVIDIA-Linux-x86_64-545.23.06.run) |
 | 545.23.08 | YES | YES |  |
 | 545.29.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.29.02/NVIDIA-Linux-x86_64-545.29.02.run) |
@@ -209,7 +211,9 @@ If you want to donate, please send it to your favorite open source organizations
 | 550.67 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.67/NVIDIA-Linux-x86_64-550.67.run) |
 | 550.76 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.76/NVIDIA-Linux-x86_64-550.76.run) |
 | 550.78 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.78/NVIDIA-Linux-x86_64-550.78.run) |
+| 550.90.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.90.07/NVIDIA-Linux-x86_64-550.90.07.run) |
 | 555.42.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/555.42.02/NVIDIA-Linux-x86_64-555.42.02.run) |
+| 555.58 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/555.58/NVIDIA-Linux-x86_64-555.58.run) |
 
 ## Synopsis
 
