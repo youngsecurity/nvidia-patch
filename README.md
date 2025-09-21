@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-575.51.02-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-580.82.09-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -203,6 +203,8 @@ If you want to donate, please send it to your favorite open source organizations
 | 535.183.01 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.183.01/NVIDIA-Linux-x86_64-535.183.01.run) |
 | 535.183.06 | YES | YES | [Driver link](http://international.download.nvidia.com/tesla/535.183.06/NVIDIA-Linux-x86_64-535.183.06.run) |
 | 535.216.01 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.216.01/NVIDIA-Linux-x86_64-535.216.01.run) |
+| 535.230.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.230.02/NVIDIA-Linux-x86_64-535.230.02.run) |
+| 535.247.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.247.01/NVIDIA-Linux-x86_64-535.247.01.run) |
 | 545.23.06 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.23.06/NVIDIA-Linux-x86_64-545.23.06.run) |
 | 545.23.08 | YES | YES |  |
 | 545.29.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.29.02/NVIDIA-Linux-x86_64-545.29.02.run) |
@@ -236,7 +238,20 @@ If you want to donate, please send it to your favorite open source organizations
 | 570.133.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run) |
 | 570.133.20 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/570.133.20/NVIDIA-Linux-x86_64-570.133.20.run) |
 | 570.144 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/570.144/NVIDIA-Linux-x86_64-570.144.run) |
+| 570.148.08 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-570_570.148.08-1_amd64.deb) |
+| 570.153.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/570.153.02/NVIDIA-Linux-x86_64-570.153.02.run) |
+| 570.158.01 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-570_570.158.01-1_amd64.deb) |
+| 570.169 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/570.169/NVIDIA-Linux-x86_64-570.169.run) |
+| 570.172.08 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-570_570.172.08-1_amd64.deb) |
 | 575.51.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/575.51.02/NVIDIA-Linux-x86_64-575.51.02.run) |
+| 575.57.08 | YES | YES | [Driver link](https://in.download.nvidia.com/XFree86/Linux-x86_64/575.57.08/NVIDIA-Linux-x86_64-575.57.08.run) |
+| 575.64 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/575.64/NVIDIA-Linux-x86_64-575.64.run) |
+| 575.64.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/575.64.03/NVIDIA-Linux-x86_64-575.64.03.run) |
+| 575.64.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/575.64.05/NVIDIA-Linux-x86_64-575.64.05.run) |
+| 580.65.06 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-580_580.65.06-1_amd64.deb) |
+| 580.76.05 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/580.76.05/NVIDIA-Linux-x86_64-580.76.05.run) |
+| 580.82.07 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-580_580.82.07-1_amd64.deb) |
+| 580.82.09 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/580.82.09/NVIDIA-Linux-x86_64-580.82.09.run) |
 
 ## Synopsis
 
